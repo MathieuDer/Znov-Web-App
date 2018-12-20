@@ -1,0 +1,25 @@
+.sidenav-container {
+  height: 100%;
+  border-color: 1px blue;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.main-color{
+  color: white !important;
+  background-color: #42ab9e !important;
+}
+
+.signOut-button{
+  margin-left: auto;
+  background-color: white !important;
+  color: #42ab9e;
+};

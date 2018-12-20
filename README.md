@@ -1,2 +1,2 @@
 # Znov-Web-App
-Znov-Web-App
+Web App

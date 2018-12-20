@@ -1,0 +1,93 @@
+<div class="container">
+  <app-logo></app-logo>
+  <mat-card class="signup-card box-shadow">
+
+    <div class="text-centered">
+      <mat-card-header>
+        <mat-card-title>S'inscrire</mat-card-title>
+      </mat-card-header>
+    </div>
+
+    <form [formGroup]="SignUpForm" novalidate class="exemple-form">
+
+      <mat-card-content>
+
+        <div class="field">
+          <mat-form-field>
+            <input matInput placeholder="Nom" class="trywidth" formControlName="name">
+            <mat-error *ngIf="SignUpForm.controls.name.hasError('required')">
+              Ce champ est requis
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="field">
+          <mat-form-field>
+            <input matInput placeholder="Prénom" class="trywidth" formControlName="firstname">
+            <mat-error *ngIf="SignUpForm.controls.firstname.hasError('required')">
+              Ce champ est requis
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="field">
+          <mat-form-field>
+            <input matInput placeholder="Email" class="trywidth" formControlName="email">
+            <mat-error *ngIf="SignUpForm.controls.email.hasError('required')">
+              Ce champ est requis
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="field">
+          <mat-form-field>
+            <input matInput formControlName="password" placeholder="Mot de passe" [type]="hide ? 'password' : 'text'">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error *ngIf="SignUpForm.controls.password.hasError('required')">
+              Ce champ est requis
+            </mat-error>
+            <mat-error *ngIf="SignUpForm.controls.password.hasError('minlength') && !SignUpForm.controls.password.hasError('required')">
+              La longueur du champ doit être au minimum de 8
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="field">
+          <mat-form-field>
+            <input matInput [type]="hidePasswordConfirmation ? 'password' : 'text'" name="passwordConfirmation"
+              formControlName="passwordConfirmation" placeholder="Confirmation du mot de passe">
+            <mat-error *ngIf="SignUpForm.controls.password.hasError('required')">
+              Ce champ est requis
+            </mat-error>
+            <mat-error *ngIf="SignUpForm.controls.password.hasError('notSamePassword') && !SignUpForm.controls.password.hasError('required')">
+              Les mots de passe saisis ne sont pas identiques
+            </mat-error>
+            <mat-icon matSuffix (click)="hidePasswordConfirmation = !hidePasswordConfirmation" class="cursor-pointer">
+              {{ hidePasswordConfirmation ? 'visibility_off' : 'visibility' }}
+            </mat-icon>
+          </mat-form-field>
+        </div>
+
+      </mat-card-content>
+
+      <mat-card-actions>
+        <div class="field text-centered">
+          <button type="submit" mat-flat-button color="primary" [disabled]="SignUpForm.pristine || SignUpForm.invalid"
+            class="btn btn-success signupButton">
+            Inscription
+          </button>
+        </div>
+      </mat-card-actions>
+
+    </form>
+
+    <div class="margin-top text-centered">
+      <a class="signupLink" routerLink="/login/signin">
+        Se connecter
+      </a>
+    </div>
+
+  </mat-card>
+  <p>Form value: {{ SignUpForm.value | json }}</p>
+  <p>Form status: {{ SignUpForm.status | json }}</p>
+</div>
