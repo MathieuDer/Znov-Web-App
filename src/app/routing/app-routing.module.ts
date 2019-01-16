@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SigninComponent } from '../login/signin/signin.component';
-import { LoginComponent } from '../login/login/login.component';
-import { ForgotComponent } from '../login/forgot/forgot.component';
-import { SignupComponent } from '../login/signup/signup.component';
-import { MainComponent } from '../main/main.component';
-import { DashboardComponent } from '../dashboard/dashboard.component';
-import { ProfilComponent } from '../profil/profil.component';
-import { AbsenceComponent } from '../school-life/absence/absence.component';
-import { ReportComponent } from '../report/report.component';
-import { PlanningComponent } from '../planning/planning.component';
-import { ExternalComponent } from '../external/external.component';
+import { SigninComponent } from '../components/login/signin/signin.component';
+import { LoginComponent } from '../components/login/login/login.component';
+import { ForgotComponent } from '../components/login/forgot/forgot.component';
+import { SignupComponent } from '../components/login/signup/signup.component';
+import { MainComponent } from '../components/main/main.component';
+import { DashboardComponent } from '../components/dashboard/dashboard.component';
+import { ProfilComponent } from '../components/profil/profil.component';
+import { AbsenceComponent } from '../components/school-life/absence/absence.component';
+import { ReportComponent } from '../components/report/report.component';
+import { PlanningComponent } from '../components/planning/planning.component';
+import { ExternalComponent } from '../components/external/external.component';
+import { AuthGuard } from '../guards/auth.guards';
 
 const routes: Routes = [
   {
@@ -21,32 +22,38 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent,
-        children: []
+        children: [],
+        canActivate: [AuthGuard]
       },
       {
         path: 'profil',
         component: ProfilComponent,
-        children: []
+        children: [],
+        canActivate: [AuthGuard]
       },
       {
         path: 'school-life/absence',
         component: AbsenceComponent,
-        children: []
+        children: [],
+        canActivate: [AuthGuard]
       },
       {
         path: 'report',
         component: ReportComponent,
-        children: []
+        children: [],
+        canActivate: [AuthGuard]
       },
       {
         path: 'planning',
         component: PlanningComponent,
-        children: []
+        children: [],
+        canActivate: [AuthGuard]
       },
       {
         path: 'external',
         component: ExternalComponent,
-        children: []
+        children: [],
+        canActivate: [AuthGuard]
       },
     ]
   },
