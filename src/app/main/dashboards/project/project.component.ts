@@ -77,30 +77,7 @@ export class ProjectDashboardComponent implements OnInit
             }
         };
 
-        /**
-         * Widget 6
-         */
-        this.widget6 = {
-            currentRange : 'TW',
-            legend       : false,
-            explodeSlices: false,
-            labels       : true,
-            doughnut     : true,
-            gradient     : false,
-            scheme       : {
-                domain: ['#f44336', '#9c27b0', '#03a9f4', '#e91e63']
-            },
-            onSelect     : (ev) => {
-                console.log(ev);
-            }
-        };
-
-        /**
-         * Widget 7
-         */
-        this.widget7 = {
-            currentRange: 'T'
-        };
+        
 
         /**
          * Widget 8

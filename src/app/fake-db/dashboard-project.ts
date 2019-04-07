@@ -17,67 +17,34 @@ export class ProjectDashboardDb
 
     public static widgets = {
         'widget1'      : {
-            'ranges'      : {
-                'DY' : 'Yesterday',
-                'DT' : 'Today',
-                'DTM': 'Tomorrow'
-            },
+            'title' : 'Moyenne Générale',
             'currentRange': 'DT',
             'data'        : {
-                'label': 'DUE TASKS',
-                'count': {
-                    'DY' : 21,
-                    'DT' : 25,
-                    'DTM': 19
+                'count': 14,
                 },
-                'extra': {
-                    'label': 'Completed',
-                    'count': {
-                        'DY' : 6,
-                        'DT' : 7,
-                        'DTM': '-'
-                    }
-
-                }
             },
-            'detail'      : 'You can show some detailed information about this widget in here.'
-        },
+         
         'widget2'      : {
-            'title' : 'Overdue',
+            'title' : "Absences",
             'data'  : {
-                'label': 'TASKS',
                 'count': 4,
-                'extra': {
-                    'label': 'Yesterday\'s overdue',
-                    'count': 2
-                }
             },
-            'detail': 'You can show some detailed information about this widget in here.'
         },
+
         'widget3'      : {
-            'title' : 'Issues',
+            'title' : 'Abs injustifées',
             'data'  : {
-                'label': 'OPEN',
-                'count': 32,
-                'extra': {
-                    'label': 'Closed today',
-                    'count': 0
-                }
+                'count': 10,
             },
-            'detail': 'You can show some detailed information about this widget in here.'
         },
+
         'widget4'      : {
-            'title' : 'Features',
+            'title' : 'Derniere note : PHP',
             'data'  : {
-                'label': 'PROPOSALS',
-                'count': 42,
-                'extra': {
-                    'label': 'Implemented',
-                    'count': 8
-                }
+                'count': 14,
             },
-            'detail': 'You can show some detailed information about this widget in here.'
         },
+
         'widget5'      : {
             'title'     : 'Github Issues',
             'ranges'    : {
@@ -1596,375 +1563,392 @@ export class ProjectDashboardDb
             }
         },
         'widget10'     : {
-            'title': 'Budget Details',
+            'title': 'Liste des Absences',
             'table': {
                 'columns': [
                     {
-                        'title': 'Budget Type'
+                        'title': 'Dates et Heures '
                     },
                     {
-                        'title': 'Total Budget'
+                        'title': 'Cours '
                     },
                     {
-                        'title': 'Spent ($)'
+                        'title': 'Nb heures'
                     },
                     {
-                        'title': 'Spent (%)'
+                        'title': 'Motif'
                     },
                     {
-                        'title': 'Remaining ($)'
-                    },
-                    {
-                        'title': 'Remaining (%)'
+                        'title': 'Justifiée'
                     }
                 ],
                 'rows'   : [
                     [
                         {
-                            'value'  : 'Wireframing',
-                            'classes': 'primary',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : '$14,880.00',
+                            'value'  : '14/02/2019',
                             'classes': 'text-bold',
                             'icon'   : ''
                         },
                         {
-                            'value'  : '$14,000.00',
+                            'value'  : 'PHP',
                             'classes': '',
                             'icon'   : ''
                         },
                         {
-                            'value'  : '%94.08',
+                            'value'  : '4 heures',
                             'classes': 'text-success',
-                            'icon'   : 'trending_up'
+                            'icon'   : ''
                         },
                         {
-                            'value'  : '$880.00',
+                            'value'  : 'Malade',
                             'classes': '',
                             'icon'   : ''
                         },
                         {
-                            'value'  : '%5.92',
-                            'classes': '',
-                            'icon'   : ''
-                        }
-                    ],
-                    [
-                        {
-                            'value'  : 'Design',
-                            'classes': 'green',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : '$21,080.00',
-                            'classes': 'text-bold',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : '$17,240.34',
-                            'classes': '',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : '%81.78',
-                            'classes': 'text-success',
-                            'icon'   : 'trending_up'
-                        },
-                        {
-                            'value'  : '$3,839.66',
-                            'classes': '',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : '%18.22',
-                            'classes': '',
-                            'icon'   : ''
-                        }
-                    ],
-                    [
-                        {
-                            'value'  : 'Coding',
-                            'classes': 'red',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : '$34,720.00',
-                            'classes': 'text-bold',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : '$3,518.00',
-                            'classes': '',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : '%10.13',
-                            'classes': 'text-danger',
-                            'icon'   : 'trending_down'
-                        },
-                        {
-                            'value'  : '$31,202.00',
-                            'classes': '',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : '%89.87',
-                            'classes': '',
-                            'icon'   : ''
-                        }
-                    ],
-                    [
-                        {
-                            'value'  : 'Marketing',
+                            'value'  : 'oui',
                             'classes': 'accent',
                             'icon'   : ''
                         },
+                    ],
+                    [
                         {
-                            'value'  : '$34,720.00',
+                            'value'  : '14/02/2019',
                             'classes': 'text-bold',
                             'icon'   : ''
                         },
                         {
-                            'value'  : '$0.00',
+                            'value'  : 'PHP',
                             'classes': '',
                             'icon'   : ''
                         },
                         {
-                            'value'  : '%0.00',
-                            'classes': 'text-info',
-                            'icon'   : 'trending_flat'
+                            'value'  : '4 heures',
+                            'classes': 'text-success',
+                            'icon'   : ''
                         },
                         {
-                            'value'  : '$34,720.00',
+                            'value'  : 'Malade',
                             'classes': '',
                             'icon'   : ''
                         },
                         {
-                            'value'  : '%100.00',
+                            'value'  : ' oui ',
+                            'classes': 'accent',
+                            'icon'   : ''
+                        }
+
+                    ],
+                    [
+                        {
+                            'value'  : '18/02/2019',
+                            'classes': 'text-bold',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : 'JAVA',
                             'classes': '',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '4 heures',
+                            'classes': 'text-success',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : 'Aucun',
+                            'classes': '',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : 'non',
+                            'classes': 'red',
                             'icon'   : ''
                         }
                     ],
                     [
                         {
-                            'value'  : 'Extra',
-                            'classes': 'orange',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : '$18,600.00',
+                            'value'  : '18/02/2019',
                             'classes': 'text-bold',
                             'icon'   : ''
                         },
                         {
-                            'value'  : '$0.00',
+                            'value'  : 'JAVA',
                             'classes': '',
                             'icon'   : ''
                         },
                         {
-                            'value'  : '%0.00',
-                            'classes': 'text-info',
-                            'icon'   : 'trending_flat'
+                            'value'  : '4 heures',
+                            'classes': 'text-success',
+                            'icon'   : ''
                         },
                         {
-                            'value'  : '$34,720.00',
+                            'value'  : 'Aucun',
                             'classes': '',
                             'icon'   : ''
                         },
                         {
-                            'value'  : '%100.00',
+                            'value'  : 'non',
+                            'classes': 'red',
+                            'icon'   : ''
+                        },
+                    ],
+                    [
+                        {
+                            'value'  : '19/02/2019',
+                            'classes': 'text-bold',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : 'Management',
                             'classes': '',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '4 heures',
+                            'classes': 'text-success',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : 'Aucun',
+                            'classes': '',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : 'non',
+                            'classes': 'red',
                             'icon'   : ''
                         }
                     ]
                 ]
             }
         },
-        'widget11'     : {
-            'title': 'Team Members',
+        'widget13'     : {
+            'title': 'Détails par Matière',
             'table': {
-                'columns': ['avatar', 'name', 'position', 'office', 'email', 'phone'],
+                'columns': [
+                    {
+                        'title': 'Matières'
+                    },
+                    {
+                        'title': 'Total heures'
+                    },
+                    {
+                        'title': "Heures justifiées"
+                    },
+                    {
+                        'title': 'Injustifiés'
+                    },
+                    {
+                        'title': "Total"
+                    }
+                ],
+                'rows'   : [
+                    [
+                        {
+                            'value'  : 'PHP',
+                            'classes': 'text-bold',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '88 heures',
+                            'classes': '',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '8 heures',
+                            'classes': 'text-success',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '-',
+                            'classes': '',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '8 heures',
+                            'classes': '',
+                            'icon'   : ''
+                        }
+                    ],
+                    [
+                        {
+                            'value'  : 'JAVA',
+                            'classes': 'text-bold',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '90 heures',
+                            'classes': '',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '-',
+                            'classes': 'text-success',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '8 heures',
+                            'classes': '',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '8 heures',
+                            'classes': '',
+                            'icon'   : ''
+                        }
+                    ],
+                    [
+                        {
+                            'value'  : 'Management',
+                            'classes': 'text-bold',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '40 heures',
+                            'classes': '',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '-',
+                            'classes': 'text-success',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '4 heurese',
+                            'classes': '',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '4 heures',
+                            'classes': '',
+                            'icon'   : ''
+                        }
+                    ]
+                    
+                ]
+            }
+        },
+        'widget14'     : {
+            'title': 'Relevé de Notes',
+            'table': {
+                'columns': [
+                    {
+                        'title': 'Matières'
+                    },
+                    {
+                        'title': 'Moyenne Etudiant'
+                    }
+                ],
+                'rows'   : [
+                    [
+                        {
+                            'value'  : 'PHP',
+                            'classes': 'text-bold',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '14',
+                            'classes': '',
+                            'icon'   : ''
+                        }
+                    ],
+                    [
+                        {
+                            'value'  : 'JAVA',
+                            'classes': 'text-bold',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '17',
+                            'classes': '',
+                            'icon'   : ''
+                        }
+                    ],
+                    [
+                        {
+                            'value'  : 'Management',
+                            'classes': 'text-bold',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '12',
+                            'classes': '',
+                            'icon'   : ''
+                        }
+                    ],
+                    [
+                        {
+                            'value'  : 'Sécurité',
+                            'classes': 'text-bold',
+                            'icon'   : ''
+                        },
+                        {
+                            'value'  : '16',
+                            'classes': '',
+                            'icon'   : ''
+                        }
+                    ],
+
+                ]
+            }
+        },
+        'widget11'     : {
+            'title': 'Classe 3A',
+            'table': {
+                'columns': ['avatar', 'name', 'email'],
                 'rows'   : [
                     {
                         avatar  : 'assets/images/avatars/james.jpg',
                         name    : 'Jack Gilbert',
-                        position: 'Design Manager',
-                        office  : 'Johor Bahru',
-                        email   : 'jgilbert48@mail.com',
-                        phone   : '+16 298 032 7774'
+                        email   : 'jgilbert48@mail.com'
                     },
                     {
                         avatar  : 'assets/images/avatars/katherine.jpg',
                         name    : 'Kathy Anderson',
-                        position: 'Recruiting Manager',
-                        office  : 'Solţānābād',
                         email   : 'kanderson49@mail.com.br',
-                        phone   : '+23 572 311 1136'
                     },
                     {
                         avatar  : 'assets/images/avatars/andrew.jpg',
                         name    : 'Mark Turner',
-                        position: 'Recruiting Manager',
-                        office  : 'Neftegorsk',
                         email   : 'mturner4a@mail.com',
-                        phone   : '+01 139 803 9263'
                     },
                     {
                         avatar  : 'assets/images/avatars/jane.jpg',
                         name    : 'Kathryn Martinez',
-                        position: 'Director of Sales',
-                        office  : 'Palekastro',
-                        email   : 'kmartinez4b@mail.com',
-                        phone   : '+25 467 022 5393'
+                        email   : 'kmartinez4b@mail.com'
                     },
                     {
                         avatar  : 'assets/images/avatars/alice.jpg',
                         name    : 'Annie Gonzales',
-                        position: 'Actuary',
-                        office  : 'Candon',
-                        email   : 'agonzales4c@mail.edu',
-                        phone   : '+99 891 619 7138'
+                        email   : 'agonzales4c@mail.edu'
                     },
                     {
                         avatar  : 'assets/images/avatars/vincent.jpg',
                         name    : 'Howard King',
-                        position: 'Human Resources',
-                        office  : 'Bergen op Zoom',
-                        email   : 'hking4d@mail.gov',
-                        phone   : '+46 984 348 1409'
+                        email   : 'hking4d@mail.gov'
                     },
-                    {
-                        avatar  : 'assets/images/avatars/joyce.jpg',
-                        name    : 'Elizabeth Dixon',
-                        position: 'Electrical Engineer',
-                        office  : 'Písečná',
-                        email   : 'edixon4e@mail.gov',
-                        phone   : '+33 332 067 9063'
-                    },
-                    {
-                        avatar  : 'assets/images/avatars/danielle.jpg',
-                        name    : 'Dorothy Morris',
-                        position: 'Office Assistant',
-                        office  : 'Magsaysay',
-                        email   : 'dmorris4f@mail.com',
-                        phone   : '+05 490 958 6120'
-                    },
-                    {
-                        avatar  : 'assets/images/avatars/carl.jpg',
-                        name    : 'Mark Gonzales',
-                        position: 'Quality Control',
-                        office  : 'Matsue-shi',
-                        email   : 'mgonzales4g@mail.com',
-                        phone   : '+03 168 394 9935'
-                    },
-                    {
-                        avatar  : 'assets/images/avatars/profile.jpg',
-                        name    : 'Catherine Rogers',
-                        position: 'Programmer Analyst',
-                        office  : 'Kangar',
-                        email   : 'crogers4h@mail.com',
-                        phone   : '+86 235 407 5373'
-                    },
-                    {
-                        avatar  : 'assets/images/avatars/garry.jpg',
-                        name    : 'Ruth Grant',
-                        position: 'Community Outreach',
-                        office  : 'Beaune',
-                        email   : 'rgrant4i@mail.pl',
-                        phone   : '+36 288 083 8460'
-                    },
-                    {
-                        avatar  : 'assets/images/avatars/james.jpg',
-                        name    : 'Phyllis Gutierrez',
-                        position: 'Administrative Assistant',
-                        office  : 'Shlissel’burg',
-                        email   : 'pgutierrez4j@mail.net',
-                        phone   : '+52 749 861 9304'
-                    }, {
-                        avatar  : 'assets/images/avatars/alice.jpg',
-                        name    : 'Lillian Morris',
-                        position: 'Media Planner',
-                        office  : 'Berlin',
-                        email   : 'lmorris4k@mail.de',
-                        phone   : '+59 695 110 3856'
-                    }, {
-                        avatar  : 'assets/images/avatars/vincent.jpg',
-                        name    : 'Jeremy Anderson',
-                        position: 'Systems Engineer',
-                        office  : 'Lũng Hồ',
-                        email   : 'janderson4l@mail.uk',
-                        phone   : '+40 384 115 1448'
-                    },
-                    {
-                        avatar  : 'assets/images/avatars/carl.jpg',
-                        name    : 'Arthur Lawrence',
-                        position: 'Nurse Practicioner',
-                        office  : 'Sarkanjut',
-                        email   : 'alawrence4m@mail.com',
-                        phone   : '+36 631 599 7867'
-                    }, {
-                        avatar  : 'assets/images/avatars/andrew.jpg',
-                        name    : 'David Simmons',
-                        position: 'Social Worker',
-                        office  : 'Ushumun',
-                        email   : 'dsimmons4n@mail.com',
-                        phone   : '+01 189 681 4417'
-                    }, {
-                        avatar  : 'assets/images/avatars/danielle.jpg',
-                        name    : 'Daniel Johnston',
-                        position: 'Help Desk',
-                        office  : 'São Carlos',
-                        email   : 'djohnston4o@mail.gov',
-                        phone   : '+60 028 943 7919'
-                    },
-
-                    {
-                        avatar  : 'assets/images/avatars/joyce.jpg',
-                        name    : 'Ann King',
-                        position: 'Internal Auditor',
-                        office  : 'Liren',
-                        email   : 'aking4p@mail.com',
-                        phone   : '+91 103 932 6545'
-                    },
-                    {
-                        avatar  : 'assets/images/avatars/james.jpg',
-                        name    : 'Phillip Franklin',
-                        position: 'VP Accounting',
-                        office  : 'Soba',
-                        email   : 'pfranklin4q@mail.com',
-                        phone   : '+25 820 986 7626'
-                    },
-                    {
-                        avatar  : 'assets/images/avatars/garry.jpg',
-                        name    : 'Gary Gonzalez',
-                        position: 'Speech Pathologist',
-                        office  : 'Gangkou',
-                        email   : 'ggonzalez4r@mail.cc',
-                        phone   : '+10 862 046 7916'
-                    }
+                    
                 ]
             }
         },
         'weatherWidget': {
             'locations'      : {
                 'NewYork': {
-                    'name'           : 'New York',
+                    'name'           : 'Nanterre',
                     'icon'           : 'icon-rainy2',
                     'temp'           : {
-                        'C': '22',
-                        'F': '72'
+                        'C': '17',
+                        'F': '65'
                     },
                     'windSpeed'      : {
                         'KMH': 12,
                         'MPH': 7.5
                     },
-                    'windDirection'  : 'NW',
-                    'rainProbability': '98%',
+                    'windDirection'  : 'Est',
+                    'rainProbability': '48%',
                     'next3Days'      : [
                         {
-                            'name': 'Sunday',
+                            'name': 'Samedi',
                             'icon': 'icon-rainy',
                             'temp': {
                                 'C': '21',
@@ -1972,15 +1956,15 @@ export class ProjectDashboardDb
                             }
                         },
                         {
-                            'name': 'Sunday',
-                            'icon': 'icon-cloudy',
+                            'name': 'Dimanche',
+                            'icon': 'icon-windy3',
                             'temp': {
                                 'C': '19',
                                 'F': '66'
                             }
                         },
                         {
-                            'name': 'Tuesday',
+                            'name': 'Lundi',
                             'icon': 'icon-windy3',
                             'temp': {
                                 'C': '24',
