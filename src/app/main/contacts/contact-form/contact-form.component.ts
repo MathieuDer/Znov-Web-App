@@ -36,12 +36,12 @@ export class ContactsContactFormDialogComponent
 
         if ( this.action === 'edit' )
         {
-            this.dialogTitle = 'Edit Contact';
+            this.dialogTitle = 'Profil';
             this.contact = _data.contact;
         }
         else
         {
-            this.dialogTitle = 'New Contact';
+            this.dialogTitle = 'Profil';
             this.contact = new Contact({});
         }
 

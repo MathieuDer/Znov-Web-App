@@ -59,11 +59,11 @@ export const navigation: FuseNavigation[] = [
                 url      : '/external',
             },
             {
-                id       : 'faq',
-                title    : 'FAQ',
+                id       : 'reglement',
+                title    : 'Règlement',
                 type     : 'item',
                 icon     : 'help',
-                url      : '/faq',
+                url      : '/reglement',
             }
         ],
         

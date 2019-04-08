@@ -106,6 +106,13 @@ export class ContactsService implements Resolve<any>
                             });
                         }
 
+                        if ( this.filterBy === 'direction' )
+                        {
+                            this.contacts = this.contacts.filter(_contact => {
+                                return this.user.direction.includes(_contact.id);
+                            });
+                        }
+
                         if ( this.searchText && this.searchText !== '' )
                         {
                             this.contacts = FuseUtils.filterArrayByString(this.contacts, this.searchText);

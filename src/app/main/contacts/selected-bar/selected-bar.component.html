@@ -3,7 +3,7 @@
     <div class="close-button-wrapper" fxFlex="0 1 auto" fxFlex.gt-sm="220px" (click)="deselectAll()">
         <button class="p-8" mat-button fxLayout="row" fxLayoutAlign="start center">
             <mat-icon class="mr-8">arrow_back</mat-icon>
-            <span class="text-uppercase">Back</span>
+            <span class="text-uppercase">Retour</span>
         </button>
     </div>
 
@@ -12,24 +12,19 @@
         <div>
             <span class="selected-contacts-count">
                 <span class="mr-4">{{selectedContacts.length}}</span>
-                <span>selected</span>
+                <span>selectionner</span>
             </span>
 
             <button mat-icon-button [matMenuTriggerFor]="selectMenu">
                 <mat-icon>arrow_drop_down</mat-icon>
             </button>
             <mat-menu #selectMenu="matMenu">
-                <button mat-menu-item (click)="selectAll()">Select all</button>
-                <button mat-menu-item (click)="deselectAll()">Deselect all</button>
+                <button mat-menu-item (click)="selectAll()">Selectionner tout</button>
+                <button mat-menu-item (click)="deselectAll()">Déselectionner tout</button>
             </mat-menu>
 
         </div>
 
-        <div class="multi-select-actions">
-            <button mat-icon-button (click)="deleteSelectedContacts()" aria-label="delete selected">
-                <mat-icon>delete</mat-icon>
-            </button>
-        </div>
 
     </div>
 

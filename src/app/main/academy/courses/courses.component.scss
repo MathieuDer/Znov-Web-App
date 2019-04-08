@@ -1,5 +1,95 @@
 @import "src/@fuse/scss/fuse";
 
+$znov: (50 : #56d5c7,
+100 : #56d5c7,
+200 : #56d5c7,
+300 : #56d5c7,
+400 : #01a295,
+500 : #01a295,
+600 : #01a295,
+700 : #007368,
+800 : #007368,
+900 : #007368,
+A100 : #56d5c7,
+A200 : #01a295,
+A400 : #01a295,
+A700 : #007368,
+contrast: (50: $dark-primary-text,
+100: $dark-primary-text,
+200: $dark-primary-text,
+300: $light-primary-text,
+400: $light-primary-text,
+500: $light-primary-text,
+600: $light-primary-text,
+700: $light-primary-text,
+800: $light-primary-text,
+900: $light-primary-text,
+A100: $dark-primary-text,
+A200: $light-primary-text,
+A400: $light-primary-text,
+A700: $light-primary-text,
+));
+
+$znov-rose: (50 : #ff6c8d,
+100 : #ff6c8d,
+200 : #ff6c8d,
+300 : #ff6c8d,
+400 : #ef3160,
+500 : #ef3160,
+600 : #ef3160,
+700 : #b60037,
+800 : #b60037,
+900 : #b60037,
+A100 : #ff6c8d,
+A200 : #ef3160,
+A400 : #ef3160,
+A700 : #b60037,
+contrast: (50: $dark-primary-text,
+100: $dark-primary-text,
+200: $dark-primary-text,
+300: $light-primary-text,
+400: $light-primary-text,
+500: $light-primary-text,
+600: $light-primary-text,
+700: $light-primary-text,
+800: $light-primary-text,
+900: $light-primary-text,
+A100: $dark-primary-text,
+A200: $light-primary-text,
+A400: $light-primary-text,
+A700: $light-primary-text,
+));
+
+$znov-black: (50 : #4b4647,
+100 : #4b4647,
+200 : #4b4647,
+300 : #4b4647,
+400 : #231f20,
+500 : #231f20,
+600 : #231f20,
+700 : #000000,
+800 : #000000,
+900 : #000000,
+A100 : #4b4647,
+A200 : #231f20,
+A400 : #231f20,
+A700 : #000000,
+contrast: (50: $dark-primary-text,
+100: $dark-primary-text,
+200: $dark-primary-text,
+300: $light-primary-text,
+400: $light-primary-text,
+500: $light-primary-text,
+600: $light-primary-text,
+700: $light-primary-text,
+800: $light-primary-text,
+900: $light-primary-text,
+A100: $dark-primary-text,
+A200: $light-primary-text,
+A400: $light-primary-text,
+A700: $light-primary-text,
+));
+
 #academy-courses {
 
     .header {
@@ -114,26 +204,23 @@
                         min-height: 64px !important;
                         max-height: 64px !important;
 
-                        &.web-bg {
-                            background: mat-color($mat-blue, 500);
+                        &.scolarite-bg {
+                            background: mat-color($znov, 500);
                         }
 
-                        &.android-bg {
-                            background: mat-color($mat-green, 500);
+                        &.document-bg {
+                            background: mat-color($znov-rose, 500);
                         }
 
-                        &.firebase-bg {
-                            background: mat-color($mat-amber, 800);
-                        }
-
-                        &.cloud-bg {
-                            background: mat-color($mat-blue-grey, 500);
+                        &.promotion-bg {
+                            background: mat-color($znov-black, 300);
                         }
 
                         .category {
                             text-transform: capitalize;
                             text-align: left;
                             font-weight: 600;
+                            color:white;
                         }
 
                         .length {
