@@ -6,6 +6,7 @@ const black6 = 'rgba(black, 0.06)';
 const white6 = 'rgba(white, 0.06)';
 
 const matColors = {
+    
     'red': {
         50      : '#ffebee',
         100     : '#ffcdd2',
@@ -687,6 +688,7 @@ const matColors = {
 
 // tslint:disable-next-line
 const matPresetColors = [
+    '#01a295', '#01a295', '#01a295', '#01a295', '#01a295', '#01a295', '#01a295', '#01a295', '#01a295', '#01a295', '#01a295', '#01a295', '#01a295', '#01a295',
     '#ffebee', '#ffcdd2', '#ef9a9a', '#e57373', '#ef5350', '#f44336', '#e53935', '#d32f2f', '#c62828', '#b71c1c', '#ff8a80', '#ff5252', '#ff1744', '#d50000', '#fce4ec', '#f8bbd0',
     '#f48fb1', '#f06292', '#ec407a', '#e91e63', '#d81b60', '#c2185b', '#ad1457', '#880e4f', '#ff80ab', '#ff4081', '#f50057', '#c51162', '#f3e5f5', '#e1bee7', '#ce93d8', '#ba68c8',
     '#ab47bc', '#9c27b0', '#8e24aa', '#7b1fa2', '#6a1b9a', '#4a148c', '#ea80fc', '#e040fb', '#d500f9', '#aa00ff', '#ede7f6', '#d1c4e9', '#b39ddb', '#9575cd', '#7e57c2', '#673ab7',

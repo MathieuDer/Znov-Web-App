@@ -45,7 +45,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'faq',
+    path: 'reglement',
     component: FaqComponent,
     resolve: {
       faq: FaqService
