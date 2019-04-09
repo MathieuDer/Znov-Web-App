@@ -5,10 +5,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { CalendarModule as AngularCalendarModule, DateAdapter } from 'angular-calendar';
-// tslint:disable-next-line:max-line-length
-import { MatButtonModule, MatIconModule, MatInputModule, MatCheckboxModule, MatFormFieldModule, MatExpansionModule, MatDatepickerModule, MatDialogModule, MatSlideToggleModule, MatToolbarModule, MatTooltipModule, MatDividerModule, MatTabsModule, MatMenuModule, MatRippleModule, MatTableModule, MatSelectModule } from '@angular/material';
+import { MaterialModule } from './material/material.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './routing/app-routing.module';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import 'hammerjs';
 
@@ -47,6 +46,8 @@ import { AcademyCoursesComponent } from './main/academy/courses/courses.componen
 import { ProjectDashboardComponent } from './main/dashboards/project/project.component';
 import { ProjectDashboardService } from './main/dashboards/project/project.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { AuthService } from './main/authentication/auth.service';
+import { AuthGuard } from './main/authentication/auth.guards';
 
 @NgModule({
     declarations: [
@@ -84,23 +85,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
         MatMomentDateModule,
 
         // Material
-        MatCheckboxModule,
-        MatExpansionModule,
-        MatButtonModule,
-        MatDatepickerModule,
-        MatDialogModule,
-        MatFormFieldModule,
-        MatIconModule,
-        MatInputModule,
-        MatSlideToggleModule,
-        MatToolbarModule,
-        MatTooltipModule,
-        MatDividerModule,
-        MatTabsModule,
-        MatMenuModule,
-        MatRippleModule,
-        MatTableModule,
-        MatSelectModule,
+        MaterialModule,
 
         AngularCalendarModule.forRoot({
             provide: DateAdapter,
@@ -128,7 +113,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
         ProfileService,
         ContactsService,
         AcademyCoursesService,
-        ProjectDashboardService
+        ProjectDashboardService,
+        AuthGuard,
+        AuthService
     ],
     bootstrap: [
         AppComponent
