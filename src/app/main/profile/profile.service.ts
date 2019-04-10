@@ -6,13 +6,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 @Injectable()
 export class ProfileService implements Resolve<any>
 {
-    timeline: any;
     about: any;
-    photosVideos: any;
 
-    timelineOnChanged: BehaviorSubject<any>;
     aboutOnChanged: BehaviorSubject<any>;
-    photosVideosOnChanged: BehaviorSubject<any>;
 
     /**
      * Constructor
@@ -24,9 +20,7 @@ export class ProfileService implements Resolve<any>
     )
     {
         // Set the defaults
-        this.timelineOnChanged = new BehaviorSubject({});
         this.aboutOnChanged = new BehaviorSubject({});
-        this.photosVideosOnChanged = new BehaviorSubject({});
     }
 
     /**
@@ -40,9 +34,7 @@ export class ProfileService implements Resolve<any>
     {
         return new Promise((resolve, reject) => {
             Promise.all([
-                this.getTimeline(),
                 this.getAbout(),
-                this.getPhotosVideos()
             ]).then(
                 () => {
                     resolve();
@@ -52,21 +44,6 @@ export class ProfileService implements Resolve<any>
         });
     }
 
-    /**
-     * Get timeline
-     */
-    getTimeline(): Promise<any[]>
-    {
-        return new Promise((resolve, reject) => {
-
-            this._httpClient.get('api/profile-timeline')
-                .subscribe((timeline: any) => {
-                    this.timeline = timeline;
-                    this.timelineOnChanged.next(this.timeline);
-                    resolve(this.timeline);
-                }, reject);
-        });
-    }
 
     /**
      * Get about
@@ -84,20 +61,5 @@ export class ProfileService implements Resolve<any>
         });
     }
 
-    /**
-     * Get photos & videos
-     */
-    getPhotosVideos(): Promise<any[]>
-    {
-        return new Promise((resolve, reject) => {
-
-            this._httpClient.get('api/profile-photos-videos')
-                .subscribe((photosVideos: any) => {
-                    this.photosVideos = photosVideos;
-                    this.photosVideosOnChanged.next(this.photosVideos);
-                    resolve(this.photosVideos);
-                }, reject);
-        });
-    }
 
 }

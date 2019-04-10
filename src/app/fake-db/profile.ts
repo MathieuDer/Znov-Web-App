@@ -89,6 +89,7 @@ export class ProfileFakeDb
                             'avatar': 'assets/images/avatars/alice.jpg'
                         },
                         'time'   : 'June 10, 2018',
+                        // tslint:disable-next-line:max-line-length
                         'message': 'That’s a wonderful place. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend ligula. Fusce posuere in sapien ac facilisis. Etiam sit amet justo non felis ornare feugiat.'
                     }
                 ]
@@ -119,6 +120,7 @@ export class ProfileFakeDb
                             'avatar': 'assets/images/avatars/alice.jpg'
                         },
                         'time'   : 'June 10, 2018',
+                        // tslint:disable-next-line:max-line-length
                         'message': 'That’s a wonderful place. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend ligula. Fusce posuere in sapien ac facilisis. Etiam sit amet justo non felis ornare feugiat.'
                     }
                 ]
@@ -128,6 +130,7 @@ export class ProfileFakeDb
                     'name'  : 'Carl Henderson',
                     'avatar': 'assets/images/avatars/carl.jpg'
                 },
+                // tslint:disable-next-line:max-line-length
                 'message': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce et eleifend ligula. Fusce posuere in sapien ac facilisis. Etiam sit amet justo non felis ornare feugiat. Aenean lorem ex, ultrices sit amet ligula sed...',
                 'time'   : 'June 10, 2018',
                 'type'   : 'something',
@@ -276,6 +279,7 @@ export class ProfileFakeDb
                 'London, UK',
                 'New York, USA'
             ],
+            // tslint:disable-next-line:max-line-length
             'about'    : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pharetra felis, sed ullamcorper dui. Sed et elementum neque. Vestibulum pellente viverra ultrices. Etiam justo augue, vehicula ac gravida a, interdum sit amet nisl. Integer vitae nisi id nibh dictum mollis in vitae tortor.'
         },
         'work'   : {

@@ -30,14 +30,14 @@
     
                 <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
                     <mat-label>Date de naissance</mat-label>
-                    <input matInput formControlName="firstName" required>
+                    <input matInput formControlName="birthdate" required>
                     <mat-icon matSuffix class="secondary-text">account_circle</mat-icon>
                     <mat-error>Date requise!</mat-error>
                 </mat-form-field>
     
                 <mat-form-field appearance="outline" fxFlex="50" class="pl-4">
                     <mat-label>Lieu de naissance</mat-label>
-                    <input matInput formControlName="lastName" required>
+                    <input matInput formControlName="birthplace" required>
                     <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
                     <mat-error>Lieu requis!</mat-error>
                 </mat-form-field>
@@ -48,9 +48,7 @@
     
                 <mat-form-field appearance="outline" fxFlex="100">
                     <mat-label>Addresse</mat-label>
-                    <textarea matInput formControlName="address" required>
-                        27 rue des fleurs
-                    </textarea>
+                    <textarea matInput formControlName="address" required>27 rue des fleurs</textarea>
                     <mat-error>Addresse est requis!</mat-error>
                 </mat-form-field>
 
@@ -72,36 +70,6 @@
                     <input matInput formControlName="city" required>
                     <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
                     <mat-error>une Ville est requise!</mat-error>
-                </mat-form-field>
-    
-            </div>
-    
-            <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
-    
-                <mat-form-field appearance="outline" fxFlex="100">
-                    <mat-label>Country</mat-label>
-                    <mat-select formControlName="country" required>
-                        <mat-option [value]="'United States of America'">
-                            United States of America
-                        </mat-option>
-                        <mat-option [value]="'United Kingdom'">
-                            United Kingdom
-                        </mat-option>
-                        <mat-option [value]="'Russia'">
-                            Russia
-                        </mat-option>
-                        <mat-option [value]="'China'">
-                            China
-                        </mat-option>
-                        <mat-option [value]="'Japan'">
-                            Japan
-                        </mat-option>
-                        <mat-option [value]="'Turkey'">
-                            Turkey
-                        </mat-option>
-                    </mat-select>
-                    <mat-icon matSuffix class="secondary-text">outlined_flag</mat-icon>
-                    <mat-error>Country is required!</mat-error>
                 </mat-form-field>
     
             </div>
