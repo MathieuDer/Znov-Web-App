@@ -15,7 +15,9 @@ import { ContactsService } from '../main/contacts/contacts.service';
 import { AcademyCoursesComponent } from '../main/academy/courses/courses.component';
 import { AcademyCoursesService } from '../main/academy/courses.service';
 import { ProjectDashboardComponent } from '../main/dashboards/project/project.component';
+import { ProjectDashboardAdminComponent } from '../main/dashboardsAdmin/project/project.component';
 import { ProjectDashboardService } from '../main/dashboards/project/project.service';
+import { ProjectDashboardAdminService } from '../main/dashboardsAdmin/project/project.service';
 import { AuthGuard } from '../main/authentication/auth.guards';
 
 
@@ -30,6 +32,14 @@ const routes: Routes = [
     // canActivate: [AuthGuard],
     resolve: {
       data: ProjectDashboardService
+    }
+  },
+  {
+    path: 'dashboardsAdmin',
+    component: ProjectDashboardAdminComponent,
+    // canActivate: [AuthGuard],
+    resolve: {
+      data: ProjectDashboardAdminService
     }
   },
   {

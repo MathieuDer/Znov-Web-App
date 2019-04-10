@@ -44,7 +44,9 @@ import { ContactsService } from './main/contacts/contacts.service';
 import { AcademyCoursesService } from './main/academy/courses.service';
 import { AcademyCoursesComponent } from './main/academy/courses/courses.component';
 import { ProjectDashboardComponent } from './main/dashboards/project/project.component';
+import { ProjectDashboardAdminComponent } from './main/dashboardsAdmin/project/project.component';
 import { ProjectDashboardService } from './main/dashboards/project/project.service';
+import { ProjectDashboardAdminService } from './main/dashboardsAdmin/project/project.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AuthService } from './main/authentication/auth.service';
 import { AuthGuard } from './main/authentication/auth.guards';
@@ -67,7 +69,8 @@ import { AuthGuard } from './main/authentication/auth.guards';
         ContactsMainSidebarComponent,
         ContactsContactFormDialogComponent,
         AcademyCoursesComponent,
-        ProjectDashboardComponent
+        ProjectDashboardComponent,
+        ProjectDashboardAdminComponent
     ],
     imports: [
         BrowserModule,
@@ -114,6 +117,7 @@ import { AuthGuard } from './main/authentication/auth.guards';
         ContactsService,
         AcademyCoursesService,
         ProjectDashboardService,
+        ProjectDashboardAdminService,
         AuthGuard,
         AuthService
     ],

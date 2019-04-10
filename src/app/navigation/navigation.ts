@@ -13,6 +13,13 @@ export const navigation: FuseNavigation[] = [
                 type     : 'item',
                 icon     : 'dashboard',
                 url      : '/dashboard',
+            },
+            {
+                id       : 'dashboardAdmin',
+                title    : 'DashboardAdmin',
+                type     : 'item',
+                icon     : 'dashboard',
+                url      : '/dashboardsAdmin',
             }
         ]
     },

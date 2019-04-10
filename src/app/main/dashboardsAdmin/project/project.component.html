@@ -1,0 +1,437 @@
+<div id="dashboard-project" class="page-layout simple right-sidebar" fxLayout="row">
+
+    <!-- CENTER -->
+    <div class="center" fusePerfectScrollbar>
+
+        <!-- HEADER -->
+        <div class="header accent p-24 pb-0" fxLayout="column" fxLayoutAlign="space-between">
+
+            <div fxLayout="row" fxLayoutAlign="space-between start">
+
+                <span class="mat-display-1 my-0 my-sm-24 welcome-message"
+                    [@animate]="{value:'*',params:{x:'50px'}}">Administration élèves
+                </span>
+
+                <button mat-icon-button class="sidebar-toggle mr-8" fxHide.gt-md
+                    (click)="toggleSidebar('project-dashboard-right-sidebar-1')">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+        </div>
+        <!-- / HEADER -->
+
+        <!-- CONTENT -->
+        <div class="content">
+
+            <mat-tab-group dynamicHeight>
+                <mat-tab label="Liste de élèves">
+
+                    <!-- WIDGET GROUP -->
+                    <div class="widget-group" fxLayout="row wrap" fxFlex="100" *fuseIfOnDom
+                        [@animateStagger]="{value:'50'}">
+
+                        <!-- WIDGET 10 -->
+                        <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="widget" fxLayout="row"
+                            fxFlex="100">
+
+                            <!-- Front -->
+                            <div class="fuse-widget-front">
+
+                                <div class="simple-table-container" ms-responsive-table>
+                                    <div class=" table-title">
+                                        {{widgets.widget10.title}}
+                                    </div>
+
+                                    <table class="simple">
+
+                                        <thead>
+                                            <tr>
+                                                <th *ngFor="let column of widgets.widget10.table.columns">
+                                                    {{column.title}}
+                                                </th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            <tr *ngFor="let row of widgets.widget10.table.rows">
+                                                <td *ngFor="let cell of row">
+                                                    <span class="p-4" [ngClass]="cell.classes">
+                                                        {{cell.value}}
+                                                    </span>
+                                                    <mat-icon *ngIf="cell.icon" class="s-16">{{cell.icon}}
+                                                    </mat-icon>
+                                                </td>
+                                                <button mat-raised-button color="accent">Modifer</button>
+                                                <button mat-raised-button color="warn">Supprimer</button>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <!-- / Front -->
+
+                        </fuse-widget>
+                        <!-- / WIDGET 10 -->
+                        
+                    </div>
+                    <!-- / WIDGET GROUP -->
+
+                </mat-tab>
+
+                <mat-tab label="Modifier profile">
+
+                    <div class="content p-24">
+
+                        <div class="mb-24" fxLayout="column" fxLayoutAlign="start" fxLayout.gt-md="row">
+                    
+                            <!-- REACTIVE FORM EXAMPLE -->
+                        
+                            <form class="mat-card mat-elevation-z4 p-24 mr-24" fxLayout="column" fxLayoutAlign="start"
+                                  fxFlex="1 0 auto" name="form" [formGroup]="form">
+                        
+                                <div class="h2 mb-24">Mon Profil</div>
+                    
+                                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
+                                        <mat-label>Nom</mat-label>
+                                        <input matInput formControlName="firstName" required>
+                                        <mat-icon matSuffix class="secondary-text">account_circle</mat-icon>
+                                        <mat-error>Un nom est requis!</mat-error>
+                                    </mat-form-field>
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pl-4">
+                                        <mat-label>Prénom</mat-label>
+                                        <input matInput formControlName="lastName" required>
+                                        <mat-icon matSuffix class="secondary-text">account_circle</mat-icon>
+                                        <mat-error>Un Prénom est requis!</mat-error>
+                                    </mat-form-field>
+                        
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
+                                        <mat-label>Date de naissance</mat-label>
+                                        <input matInput formControlName="birthdate" required>
+                                        <mat-icon matSuffix class="secondary-text">account_circle</mat-icon>
+                                        <mat-error>Date requise!</mat-error>
+                                    </mat-form-field>
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pl-4">
+                                        <mat-label>Lieu de naissance</mat-label>
+                                        <input matInput formControlName="birthplace" required>
+                                        <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
+                                        <mat-error>Lieu requis!</mat-error>
+                                    </mat-form-field>
+                        
+                                </div>
+                    
+                                <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                        
+                                    <mat-form-field appearance="outline" fxFlex="100">
+                                        <mat-label>Addresse</mat-label>
+                                        <textarea matInput formControlName="address" required>27 rue des fleurs</textarea>
+                                        <mat-error>Addresse est requis!</mat-error>
+                                    </mat-form-field>
+                    
+                                </div>
+                    
+                                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
+                                        <mat-label>Code Postal</mat-label>
+                                        <input matInput #postalCode value="94043"
+                                               formControlName="postalCode" maxlength="5" required>
+                                        <mat-icon matSuffix class="secondary-text">markunread_mailbox</mat-icon>
+                                        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                                        <mat-error>Code Postal requis !</mat-error>
+                                    </mat-form-field>
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pl-4">
+                                        <mat-label>Ville</mat-label>
+                                        <input matInput formControlName="city" required>
+                                        <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
+                                        <mat-error>une Ville est requise!</mat-error>
+                                    </mat-form-field>
+                        
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
+                                        <mat-label>Classe</mat-label>
+                                        <input matInput #postalCode value=""
+                                               formControlName="postalCode" required>
+                                        <mat-icon matSuffix class="secondary-text">markunread_mailbox</mat-icon>
+                                        <mat-error>Classe requise</mat-error>
+                                    </mat-form-field>
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pl-4">
+                                        <mat-label>Ecole</mat-label>
+                                        <input matInput formControlName="city" required>
+                                        <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
+                                        <mat-error>Etablissement</mat-error>
+                                    </mat-form-field>
+                        
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="center center">
+                                    <button mat-raised-button matStepperNext type="button" color="accent">
+                                        Enregistrer
+                                    </button>
+                                </div>
+                        
+                            </form>
+                            <!-- / REACTIVE FORM EXAMPLE -->
+                        </div>
+                        
+                        
+                    </div>
+                </mat-tab>
+
+                <mat-tab label="Ajouter un élève">
+
+                    <div class="content p-24">
+
+                        <div class="mb-24" fxLayout="column" fxLayoutAlign="start" fxLayout.gt-md="row">
+                    
+                            <!-- REACTIVE FORM EXAMPLE -->
+                        
+                            <form class="mat-card mat-elevation-z4 p-24 mr-24" fxLayout="column" fxLayoutAlign="start"
+                                  fxFlex="1 0 auto" name="form" [formGroup]="form">
+                        
+                                <div class="h2 mb-24">Mon Profil</div>
+                    
+                                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
+                                        <mat-label>Nom</mat-label>
+                                        <input matInput formControlName="firstName" required>
+                                        <mat-icon matSuffix class="secondary-text">account_circle</mat-icon>
+                                        <mat-error>Un nom est requis!</mat-error>
+                                    </mat-form-field>
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pl-4">
+                                        <mat-label>Prénom</mat-label>
+                                        <input matInput formControlName="lastName" required>
+                                        <mat-icon matSuffix class="secondary-text">account_circle</mat-icon>
+                                        <mat-error>Un Prénom est requis!</mat-error>
+                                    </mat-form-field>
+                        
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
+                                        <mat-label>Date de naissance</mat-label>
+                                        <input matInput formControlName="birthdate" required>
+                                        <mat-icon matSuffix class="secondary-text">account_circle</mat-icon>
+                                        <mat-error>Date requise!</mat-error>
+                                    </mat-form-field>
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pl-4">
+                                        <mat-label>Lieu de naissance</mat-label>
+                                        <input matInput formControlName="birthplace" required>
+                                        <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
+                                        <mat-error>Lieu requis!</mat-error>
+                                    </mat-form-field>
+                        
+                                </div>
+                    
+                                <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                        
+                                    <mat-form-field appearance="outline" fxFlex="100">
+                                        <mat-label>Addresse</mat-label>
+                                        <textarea matInput formControlName="address" required>27 rue des fleurs</textarea>
+                                        <mat-error>Addresse est requis!</mat-error>
+                                    </mat-form-field>
+                    
+                                </div>
+                    
+                                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
+                                        <mat-label>Code Postal</mat-label>
+                                        <input matInput #postalCode value="94043"
+                                               formControlName="postalCode" maxlength="5" required>
+                                        <mat-icon matSuffix class="secondary-text">markunread_mailbox</mat-icon>
+                                        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                                        <mat-error>Code Postal requis !</mat-error>
+                                    </mat-form-field>
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pl-4">
+                                        <mat-label>Ville</mat-label>
+                                        <input matInput formControlName="city" required>
+                                        <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
+                                        <mat-error>une Ville est requise!</mat-error>
+                                    </mat-form-field>
+                        
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
+                                        <mat-label>Classe</mat-label>
+                                        <input matInput #postalCode value=""
+                                               formControlName="postalCode" required>
+                                        <mat-icon matSuffix class="secondary-text">markunread_mailbox</mat-icon>
+                                        <mat-error>Classe requise</mat-error>
+                                    </mat-form-field>
+                        
+                                    <mat-form-field appearance="outline" fxFlex="50" class="pl-4">
+                                        <mat-label>Ecole</mat-label>
+                                        <input matInput formControlName="city" required>
+                                        <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
+                                        <mat-error>Etablissement</mat-error>
+                                    </mat-form-field>
+                        
+                                </div>
+                                <div fxLayout="row" fxLayoutAlign="center center">
+                                    <button mat-raised-button matStepperNext type="button" color="accent">
+                                        Enregistrer
+                                    </button>
+                                </div>
+                        
+                            </form>
+                            <!-- / REACTIVE FORM EXAMPLE -->
+                        </div>
+                        
+                        
+                    </div>
+
+                </mat-tab>
+
+            </mat-tab-group>
+
+        </div>
+        <!-- / CONTENT -->
+
+    </div>
+    <!-- / CENTER -->
+
+    <!-- SIDEBAR -->
+    <fuse-sidebar class="sidebar" name="project-dashboard-right-sidebar-1" position="right" lockedOpen="gt-md">
+
+        <!-- SIDEBAR CONTENT -->
+        <div class="content">
+
+            <!-- WIDGET GROUP -->
+            <div class="widget-group" fxLayout="column" fxFlex="100" [@animateStagger]="{value:'50'}">
+
+                <!-- NOW WIDGET -->
+                <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}" class="pb-0">
+
+                    <!-- Front -->
+                    <div class="fuse-widget-front">
+
+                        <div class="pl-16 pr-8 py-16" fxLayout="row" fxLayoutAlign="space-between center">
+
+                            <div class="h3">{{dateNow | date: 'EEEE, HH:mm:ss'}}</div>
+
+                            
+                        </div>
+
+                        <div class="p-16 pb-24" fxLayout="column" fxLayoutAlign="center center">
+                            <div class="h1 secondary-text">
+                                <span>{{dateNow | date: 'MMMM'}}</span>
+                            </div>
+
+                            <div class="font-size-72 line-height-88 secondary-text font-weight-400">
+                                {{dateNow | date: 'd'}}
+                            </div>
+
+                            <div class="h1 secondary-text">
+                                <span>{{dateNow | date: 'y'}}</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- / Front -->
+
+                </fuse-widget>
+                <!-- / NOW WIDGET -->
+
+                <!-- WEATHER WIDGET -->
+                <fuse-widget [@animate]="{value:'*',params:{y:'100%'}}">
+
+                    <!-- Front -->
+                    <div class="fuse-widget-front">
+
+                        <div class="pl-16 pr-8 py-16" fxLayout="row" fxLayoutAlign="space-between center">
+
+                            <div class="h4" fxLayout="row" fxLayoutAlign="start center">
+                                <mat-icon class="secondary-text mr-8">place</mat-icon>
+                                {{widgets.weatherWidget.locations[widgets.weatherWidget.currentLocation].name}}
+                            </div>
+                        </div>
+
+                        <div class="p-16 pb-32" fxLayout="column" fxLayoutAlign="center center">
+
+                            <div fxLayout="row" fxLayoutAlign="center center">
+                                <mat-icon fontSet="meteocons"
+                                    [fontIcon]="widgets.weatherWidget.locations[widgets.weatherWidget.currentLocation].icon"
+                                    class="icon s-40 secondary-text mr-16"></mat-icon>
+                                <span class="mat-display-2 m-0 font-weight-300 secondary-text">
+                                    {{widgets.weatherWidget.locations[widgets.weatherWidget.currentLocation].temp[widgets.weatherWidget.tempUnit]}}
+                                </span>
+                                <span class="font-size-48 font-weight-300 hint-text text-super ml-8">°</span>
+                                <span class="mat-display-2 mb-0 font-weight-300 hint-text ng-binding">C</span>
+                            </div>
+                        </div>
+
+                        <div class="p-16 by" fxLayout="row" fxLayoutAlign="space-between center">
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <mat-icon fontSet="meteocons" fontIcon="icon-windy" class="s-16 secondary-text mr-8">
+                                </mat-icon>
+                                <span>
+                                    {{widgets.weatherWidget.locations[widgets.weatherWidget.currentLocation].windSpeed[widgets.weatherWidget.speedUnit]}}
+                                </span>
+                                <span class="secondary-text ml-5">{{widgets.weatherWidget.speedUnit}}</span>
+                            </div>
+
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <mat-icon fontSet="meteocons" fontIcon="icon-compass" class="s-16 secondary-text mr-8">
+                                </mat-icon>
+                                <span>
+                                    {{widgets.weatherWidget.locations[widgets.weatherWidget.currentLocation].windDirection}}
+                                </span>
+                            </div>
+
+                            <div fxLayout="row" fxLayoutAlign="start center">
+                                <mat-icon fontSet="meteocons" fontIcon="icon-rainy" class="s-16 secondary-text mr-8">
+                                </mat-icon>
+                                <span>
+                                    {{widgets.weatherWidget.locations[widgets.weatherWidget.currentLocation].rainProbability}}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="py-16">
+                            <div class="py-16 px-24" fxLayout="row" fxLayoutAlign="space-between center"
+                                *ngFor="let day of widgets.weatherWidget.locations[widgets.weatherWidget.currentLocation].next3Days">
+                                <span class="h4">{{day.name}}</span>
+                                <div fxLayout="row" fxLayoutAlign="start center">
+                                    <mat-icon fontSet="meteocons" [fontIcon]="day.icon" class="secondary-text mr-16">
+                                    </mat-icon>
+                                    <span class="h2">{{day.temp[widgets.weatherWidget.tempUnit]}}</span>
+                                    <span class="h2 font-weight-300 secondary-text text-super">&deg;</span>
+                                    <span class="h2 font-weight-300 secondary-text">
+                                        {{widgets.weatherWidget.tempUnit}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- / Front -->
+
+                </fuse-widget>
+                <!-- / WEATHER WIDGET -->
+
+            </div>
+            <!-- / WIDGET GROUP -->
+
+        </div>
+        <!-- / SIDEBAR CONTENT -->
+
+    </fuse-sidebar>
+    <!-- / SIDEBAR -->
+
+</div>
