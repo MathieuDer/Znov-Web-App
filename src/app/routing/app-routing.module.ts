@@ -16,8 +16,12 @@ import { AcademyCoursesComponent } from '../main/academy/courses/courses.compone
 import { AcademyCoursesService } from '../main/academy/courses.service';
 import { ProjectDashboardComponent } from '../main/dashboards/project/project.component';
 import { ProjectDashboardAdminComponent } from '../main/dashboardsAdmin/project/project.component';
+import { ProjectDashboardAdminSalleComponent } from '../main/dashboardsAdminSalle/project/project.component';
+import { ProjectDashboardAdminNoteAbsComponent } from '../main/dashboardsAdminNoteAbsence/project/project.component';
 import { ProjectDashboardService } from '../main/dashboards/project/project.service';
 import { ProjectDashboardAdminService } from '../main/dashboardsAdmin/project/project.service';
+import { ProjectDashboardAdminSalleService } from '../main/dashboardsAdminSalle/project/project.service';
+import { ProjectDashboardAdminNoteAbsService } from '../main/dashboardsAdminNoteAbsence/project/project.service';
 import { AuthGuard } from '../main/authentication/auth.guards';
 
 
@@ -35,11 +39,27 @@ const routes: Routes = [
     }
   },
   {
-    path: 'dashboardsAdmin',
+    path: 'dashboards-eleves',
     component: ProjectDashboardAdminComponent,
     // canActivate: [AuthGuard],
     resolve: {
       data: ProjectDashboardAdminService
+    }
+  },
+  {
+    path: 'dashboards-salles',
+    component: ProjectDashboardAdminSalleComponent,
+    // canActivate: [AuthGuard],
+    resolve: {
+      data: ProjectDashboardAdminSalleService
+    }
+  },
+  {
+    path: 'dashboards-noteabs',
+    component: ProjectDashboardAdminNoteAbsComponent,
+    // canActivate: [AuthGuard],
+    resolve: {
+      data: ProjectDashboardAdminNoteAbsService
     }
   },
   {

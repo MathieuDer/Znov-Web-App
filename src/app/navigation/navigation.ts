@@ -16,10 +16,24 @@ export const navigation: FuseNavigation[] = [
             },
             {
                 id       : 'dashboardAdmin',
-                title    : 'DashboardAdmin',
+                title    : 'Dashboard Eleve',
                 type     : 'item',
                 icon     : 'dashboard',
-                url      : '/dashboardsAdmin',
+                url      : '/dashboards-eleves',
+            },
+            {
+                id       : 'dashboardSalle',
+                title    : 'Dashboard Salle',
+                type     : 'item',
+                icon     : 'dashboard',
+                url      : '/dashboards-salles',
+            },
+            {
+                id       : 'dashboardNoteAbs',
+                title    : 'Dashboard note et absence',
+                type     : 'item',
+                icon     : 'dashboard',
+                url      : '/dashboards-noteabs',
             }
         ]
     },

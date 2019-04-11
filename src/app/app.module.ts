@@ -45,8 +45,12 @@ import { AcademyCoursesService } from './main/academy/courses.service';
 import { AcademyCoursesComponent } from './main/academy/courses/courses.component';
 import { ProjectDashboardComponent } from './main/dashboards/project/project.component';
 import { ProjectDashboardAdminComponent } from './main/dashboardsAdmin/project/project.component';
+import { ProjectDashboardAdminSalleComponent } from './main/dashboardsAdminSalle/project/project.component';
+import { ProjectDashboardAdminNoteAbsComponent } from './main/dashboardsAdminNoteAbsence/project/project.component';
 import { ProjectDashboardService } from './main/dashboards/project/project.service';
 import { ProjectDashboardAdminService } from './main/dashboardsAdmin/project/project.service';
+import { ProjectDashboardAdminSalleService } from './main/dashboardsAdminSalle/project/project.service';
+import { ProjectDashboardAdminNoteAbsService } from './main/dashboardsAdminNoteAbsence/project/project.service';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AuthService } from './main/authentication/auth.service';
 import { AuthGuard } from './main/authentication/auth.guards';
@@ -70,7 +74,9 @@ import { AuthGuard } from './main/authentication/auth.guards';
         ContactsContactFormDialogComponent,
         AcademyCoursesComponent,
         ProjectDashboardComponent,
-        ProjectDashboardAdminComponent
+        ProjectDashboardAdminComponent,
+        ProjectDashboardAdminSalleComponent,
+        ProjectDashboardAdminNoteAbsComponent
     ],
     imports: [
         BrowserModule,
@@ -118,6 +124,8 @@ import { AuthGuard } from './main/authentication/auth.guards';
         AcademyCoursesService,
         ProjectDashboardService,
         ProjectDashboardAdminService,
+        ProjectDashboardAdminSalleService,
+        ProjectDashboardAdminNoteAbsService,
         AuthGuard,
         AuthService
     ],
