@@ -1,82 +1,127 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SigninComponent } from '../components/login/signin/signin.component';
-import { LoginComponent } from '../components/login/login/login.component';
-import { ForgotComponent } from '../components/login/forgot/forgot.component';
-import { SignupComponent } from '../components/login/signup/signup.component';
-import { MainComponent } from '../components/main/main.component';
-import { DashboardComponent } from '../components/dashboard/dashboard.component';
-import { ProfilComponent } from '../components/profil/profil.component';
-import { AbsenceComponent } from '../components/school-life/absence/absence.component';
-import { ReportComponent } from '../components/report/report.component';
-import { PlanningComponent } from '../components/planning/planning.component';
-import { ExternalComponent } from '../components/external/external.component';
-import { AuthGuard } from '../guards/auth.guards';
+import { Error404Component } from '../main/errors/404/error-404.component';
+import { LoginComponent } from '../main/authentication/login/login.component';
+import { RegisterComponent } from '../main/authentication/register/register.component';
+import { ForgotPasswordComponent } from '../main/authentication/forgot-password/forgot-password.component';
+import { FaqService } from '../main/faq/faq.service';
+import { FaqComponent } from '../main/faq/faq.component';
+import { CalendarComponent } from '../main/calendar/calendar.component';
+import { CalendarService } from '../main/calendar/calendar.service';
+import { ProfileComponent } from '../main/profile/profile.component';
+import { ProfileService } from '../main/profile/profile.service';
+import { ContactsComponent } from '../main/contacts/contacts.component';
+import { ContactsService } from '../main/contacts/contacts.service';
+import { AcademyCoursesComponent } from '../main/academy/courses/courses.component';
+import { AcademyCoursesService } from '../main/academy/courses.service';
+import { ProjectDashboardComponent } from '../main/dashboards/project/project.component';
+import { ProjectDashboardAdminComponent } from '../main/dashboardsAdmin/project/project.component';
+import { ProjectDashboardAdminSalleComponent } from '../main/dashboardsAdminSalle/project/project.component';
+import { ProjectDashboardAdminNoteAbsComponent } from '../main/dashboardsAdminNoteAbsence/project/project.component';
+import { ProjectDashboardService } from '../main/dashboards/project/project.service';
+import { ProjectDashboardAdminService } from '../main/dashboardsAdmin/project/project.service';
+import { ProjectDashboardAdminSalleService } from '../main/dashboardsAdminSalle/project/project.service';
+import { ProjectDashboardAdminNoteAbsService } from '../main/dashboardsAdminNoteAbsence/project/project.service';
+import { AuthGuard } from '../main/authentication/auth.guards';
+
 
 const routes: Routes = [
   {
-    path: '',
-    component: MainComponent,
-    children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      {
-        path: 'dashboard',
-        component: DashboardComponent,
-        children: [],
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'profil',
-        component: ProfilComponent,
-        children: [],
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'school-life/absence',
-        component: AbsenceComponent,
-        children: [],
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'report',
-        component: ReportComponent,
-        children: [],
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'planning',
-        component: PlanningComponent,
-        children: [],
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'external',
-        component: ExternalComponent,
-        children: [],
-        canActivate: [AuthGuard]
-      },
-    ]
+    path: '', redirectTo: 'dashboard', pathMatch: 'full',
+    canActivate: [AuthGuard],
   },
   {
-    path: 'login',
-    component: LoginComponent,
+    path: 'dashboard',
+    component: ProjectDashboardComponent,
+    canActivate: [AuthGuard],
+    resolve: {
+      data: ProjectDashboardService
+    }
+  },
+  {
+    path: 'dashboards-eleves',
+    component: ProjectDashboardAdminComponent,
+    canActivate: [AuthGuard],
+    resolve: {
+      data: ProjectDashboardAdminService
+    }
+  },
+  {
+    path: 'dashboards-salles',
+    component: ProjectDashboardAdminSalleComponent,
+    // canActivate: [AuthGuard],
+    resolve: {
+      data: ProjectDashboardAdminSalleService
+    }
+  },
+  {
+    path: 'dashboards-noteabs',
+    component: ProjectDashboardAdminNoteAbsComponent,
+    // canActivate: [AuthGuard],
+    resolve: {
+      data: ProjectDashboardAdminNoteAbsService
+    }
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate: [AuthGuard],
+    resolve: {
+      profile: ProfileService
+    }
+  },
+  {
+    path: 'reglement',
+    component: FaqComponent,
+    canActivate: [AuthGuard],
+    resolve: {
+      faq: FaqService
+    }
+  },
+  {
+    path: 'calendar',
+    component: CalendarComponent,
+    canActivate: [AuthGuard],
+    children: [],
+    resolve: {
+      chat: CalendarService
+    }
+  },
+  {
+    path: 'contact',
+    component: ContactsComponent,
+    canActivate: [AuthGuard],
+    resolve: {
+      contacts: ContactsService
+    }
+  },
+  {
+    path: 'external',
+    component: AcademyCoursesComponent,
+    canActivate: [AuthGuard],
+    resolve: {
+      academy: AcademyCoursesService
+    }
+  },
+  {
+    path: 'auth',
     children: [
-      { path: '', redirectTo: 'signin', pathMatch: 'full' },
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
       {
-        path: 'signin',
-        component: SigninComponent,
-        children: []
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
       },
       {
         path: 'forgot',
-        component: ForgotComponent
-      },
-      {
-        path: 'signup',
-        component: SignupComponent
+        component: ForgotPasswordComponent
       }
     ]
-  }
+  },
+  { path: '**', component: Error404Component }
 ];
 
 @NgModule({
