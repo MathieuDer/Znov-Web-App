@@ -19,7 +19,7 @@ export class AuthService {
   registerUser(user) {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/register', user, { headers: headers });
+    return this.http.post('http://localhost:3000/auth/register', user, { headers: headers });
   }
 
   // Connexion
@@ -27,7 +27,7 @@ export class AuthService {
   authenticateUser(user) {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:3000/users/login', user, { headers: headers });
+    return this.http.post('http://localhost:3000/auth/login', user, { headers: headers });
   }
 
   // Création du token en local storage

@@ -54,6 +54,7 @@ import { ProjectDashboardAdminNoteAbsService } from './main/dashboardsAdminNoteA
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AuthService } from './main/authentication/auth.service';
 import { AuthGuard } from './main/authentication/auth.guards';
+import { UserService } from './main/user.service';
 
 @NgModule({
     declarations: [
@@ -127,7 +128,8 @@ import { AuthGuard } from './main/authentication/auth.guards';
         ProjectDashboardAdminSalleService,
         ProjectDashboardAdminNoteAbsService,
         AuthGuard,
-        AuthService
+        AuthService,
+        UserService
     ],
     bootstrap: [
         AppComponent

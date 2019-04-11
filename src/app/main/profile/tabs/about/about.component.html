@@ -13,14 +13,14 @@
     
                 <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
                     <mat-label>Nom</mat-label>
-                    <input matInput formControlName="firstName" required>
+                    <input matInput formControlName="firstName" [(ngModel)]="user.nom" required>
                     <mat-icon matSuffix class="secondary-text">account_circle</mat-icon>
                     <mat-error>Un nom est requis!</mat-error>
                 </mat-form-field>
     
                 <mat-form-field appearance="outline" fxFlex="50" class="pl-4">
                     <mat-label>Prénom</mat-label>
-                    <input matInput formControlName="lastName" required>
+                    <input matInput formControlName="lastName" [(ngModel)]="user.prenom" required>
                     <mat-icon matSuffix class="secondary-text">account_circle</mat-icon>
                     <mat-error>Un Prénom est requis!</mat-error>
                 </mat-form-field>
@@ -30,14 +30,14 @@
     
                 <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
                     <mat-label>Date de naissance</mat-label>
-                    <input matInput formControlName="birthdate" required>
+                    <input matInput formControlName="birthdate" [(ngModel)]="user.date_naissance" required>
                     <mat-icon matSuffix class="secondary-text">account_circle</mat-icon>
                     <mat-error>Date requise!</mat-error>
                 </mat-form-field>
     
                 <mat-form-field appearance="outline" fxFlex="50" class="pl-4">
                     <mat-label>Lieu de naissance</mat-label>
-                    <input matInput formControlName="birthplace" required>
+                    <input matInput formControlName="birthplace" [(ngModel)]="user.ville_naissance" required>
                     <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
                     <mat-error>Lieu requis!</mat-error>
                 </mat-form-field>
@@ -48,30 +48,10 @@
     
                 <mat-form-field appearance="outline" fxFlex="100">
                     <mat-label>Addresse</mat-label>
-                    <textarea matInput formControlName="address" required>27 rue des fleurs</textarea>
+                    <textarea matInput formControlName="address" [(ngModel)]="user.adresse" required>27 rue des fleurs</textarea>
                     <mat-error>Addresse est requis!</mat-error>
                 </mat-form-field>
 
-            </div>
-
-            <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
-    
-                <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
-                    <mat-label>Code Postal</mat-label>
-                    <input matInput #postalCode value="94043"
-                           formControlName="postalCode" maxlength="5" required>
-                    <mat-icon matSuffix class="secondary-text">markunread_mailbox</mat-icon>
-                    <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-                    <mat-error>Code Postal requis !</mat-error>
-                </mat-form-field>
-    
-                <mat-form-field appearance="outline" fxFlex="50" class="pl-4">
-                    <mat-label>Ville</mat-label>
-                    <input matInput formControlName="city" required>
-                    <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
-                    <mat-error>une Ville est requise!</mat-error>
-                </mat-form-field>
-    
             </div>
             <div fxLayout="row" fxLayoutAlign="center center">
                 <button mat-raised-button matStepperNext type="button" color="accent">

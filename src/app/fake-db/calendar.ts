@@ -8,6 +8,7 @@ import {
     isSameMonth,
     addHours
 } from 'date-fns';
+import { Meta } from '@angular/platform-browser';
 
 export class CalendarFakeDb
 {
@@ -17,78 +18,155 @@ export class CalendarFakeDb
             id  : 'events',
             data: [
                 {
-                    start    : subDays(startOfDay(new Date()), 1),
-                    end      : addDays(new Date(), 1),
-                    title    : 'A 3 day event',
+                    start    : new Date,
+                    end      : new Date,
+                    title    : 'Full Stack - Salle 402 | 9:00 - 12:00',
                     allDay   : true,
                     color    : {
                         primary  : '#F44336',
                         secondary: '#FFCDD2'
                     },
                     resizable: {
-                        beforeStart: true,
-                        afterEnd   : true
+                        beforeStart: false,
+                        afterEnd   : false
                     },
-                    draggable: true,
+                    draggable: false,
                     meta     : {
-                        location: 'Los Angeles',
-                        notes   : 'Eos eu verear adipiscing, ex ornatus denique iracundia sed, quodsi oportere appellantur an pri.'
+                        location: '402',
+                        notes   : 'Intervenant: Vincent Z'
                     }
                 },
                 {
-                    start    : startOfDay(new Date()),
-                    title    : 'An event with no end date',
-                    allDay   : false,
+                    start    : new Date,
+                    end      : new Date,
+                    title    : 'Full Stack - Salle 402 | 13:00 - 18:00',
+                    allDay   : true,
                     color    : {
-                        primary  : '#FF9800',
-                        secondary: '#FFE0B2'
+                        primary  : '#F44336',
+                        secondary: '#FFCDD2'
                     },
                     resizable: {
-                        beforeStart: true,
-                        afterEnd   : true
+                        beforeStart: false,
+                        afterEnd   : false
                     },
-                    draggable: true,
+                    draggable: false,
                     meta     : {
-                        location: 'Los Angeles',
-                        notes   : 'Eos eu verear adipiscing, ex ornatus denique iracundia sed, quodsi oportere appellantur an pri.'
+                        location: '402',
+                        notes   : 'Intervenant: Vincent Z'
                     }
                 },
                 {
-                    start    : subDays(endOfMonth(new Date()), 3),
-                    end      : addDays(endOfMonth(new Date()), 3),
-                    title    : 'A long event that spans 2 months',
-                    allDay   : false,
-                    color    : {
-                        primary  : '#1E90FF',
-                        secondary: '#D1E8FF'
-                    },
-                    resizable: {
-                        beforeStart: true,
-                        afterEnd   : true
-                    },
-                    draggable: true,
-                    meta     : {
-                        location: 'Los Angeles',
-                        notes   : 'Eos eu verear adipiscing, ex ornatus denique iracundia sed, quodsi oportere appellantur an pri.'
-                    }
-                },
-                {
-                    start    : addHours(startOfDay(new Date()), 2),
-                    end      : new Date(),
-                    title    : 'A draggable and resizable event',
+                    start    : addDays(new Date(), 4),
+                    end      : addDays(new Date(), 4),
+                    title    : 'PHP - Salle 421 | 9:00 - 12:00',
                     allDay   : false,
                     color    : {
                         primary  : '#673AB7',
                         secondary: '#D1C4E9'
                     },
                     resizable: {
-                        beforeStart: true,
-                        afterEnd   : true
+                        beforeStart: false,
+                        afterEnd   : false
                     },
                     draggable: true,
                     meta     : {
-                        location: 'Los Angeles',
-                        notes   : 'Eos eu verear adipiscing, ex ornatus denique iracundia sed, quodsi oportere appellantur an pri.'
+                        location: '421',
+                        notes   : 'Intervenant: Thierry D'
+                    }
+                },
+                {
+                    start    : addDays(new Date(), 4),
+                    end      : addDays(new Date(), 4),
+                    title    : 'PHP - Salle 421 | 13:00 - 18:00',
+                    allDay   : false,
+                    color    : {
+                        primary  : '#673AB7',
+                        secondary: '#D1C4E9'
+                    },
+                    resizable: {
+                        beforeStart: false,
+                        afterEnd   : false
+                    },
+                    draggable: true,
+                    meta     : {
+                        location: '421',
+                        notes   : 'Intervenant: Thierry D'
+                    }
+                },
+                {
+                    start    : addDays(new Date(), 5),
+                    end      : addDays(new Date(), 5),
+                    title    : 'C# - Salle 412 | 9:00 - 12:00',
+                    allDay   : false,
+                    color    : {
+                        primary  : '#0277bd',
+                        secondary: '#4fc3f7'
+                    },
+                    resizable: {
+                        beforeStart: false,
+                        afterEnd   : false
+                    },
+                    draggable: false,
+                    meta     : {
+                        location: '412',
+                        notes   : 'Intervenant: Vincent L'
+                    }
+                },
+                {
+                    start    : addDays(new Date(), 5),
+                    end      : addDays(new Date(), 5),
+                    title    : 'C# - Salle 412 | 13:00 - 18:00',
+                    allDay   : false,
+                    color    : {
+                        primary  : '#0277bd',
+                        secondary: '#4fc3f7'
+                    },
+                    resizable: {
+                        beforeStart: false,
+                        afterEnd   : false
+                    },
+                    draggable: false,
+                    meta     : {
+                        location: '412',
+                        notes   : 'Intervenant: Vincent L'
+                    }
+                },
+                {
+                    start    : addDays(new Date(), 6),
+                    end      : addDays(new Date(), 6),
+                    title    : 'Swift 4 - 407 | 9:00 - 12:00',
+                    allDay   : false,
+                    color    : {
+                        primary  : '#f57c00',
+                        secondary: '#ffb74d'
+                    },
+                    resizable: {
+                        beforeStart: false,
+                        afterEnd   : false
+                    },
+                    draggable: false,
+                    meta     : {
+                        location: '407',
+                        notes   : 'Intervenant: Ludovic O'
+                    }
+                },
+                {
+                    start    : addDays(new Date(), 6),
+                    end      : addDays(new Date(), 6),
+                    title    : 'Swift 4 - 407 | 13:00 - 18:00',
+                    allDay   : false,
+                    color    : {
+                        primary  : '#f57c00',
+                        secondary: '#ffb74d'
+                    },
+                    resizable: {
+                        beforeStart: false,
+                        afterEnd   : false
+                    },
+                    draggable: false,
+                    meta     : {
+                        location: '407',
+                        notes   : 'Intervenant: Ludovic O'
                     }
                 }
             ]

@@ -1,4 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
+import { Router } from '@angular/router';
 
 import { fuseAnimations } from '@fuse/animations';
 
@@ -9,13 +11,23 @@ import { fuseAnimations } from '@fuse/animations';
     encapsulation: ViewEncapsulation.None,
     animations   : fuseAnimations
 })
-export class ProfileComponent
-{
-    /**
-     * Constructor
-     */
-    constructor()
-    {
+export class ProfileComponent implements OnInit {
+  user: Object;
 
-    }
+
+  constructor(private userService: UserService, private router: Router) { }
+
+  // tslint:disable-next-line:typedef
+  ngOnInit() {
+    this.userService.getProfile().subscribe(profile => {
+      this.user = (<any>profile).user;
+    },
+      err => {
+        console.log(err);
+        return false;
+      }
+    );
+  }
+
 }
+
