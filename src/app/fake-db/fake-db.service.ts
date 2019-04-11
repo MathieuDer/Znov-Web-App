@@ -1,6 +1,7 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 import { ProjectDashboardDb } from 'app/fake-db/dashboard-project';
+import { ProjectDashboardAdminEleveDb } from 'app/fake-db/dashboard-Admin-eleve';
 import { AnalyticsDashboardDb } from 'app/fake-db/dashboard-analytics';
 import { CalendarFakeDb } from 'app/fake-db/calendar';
 import { ECommerceFakeDb } from 'app/fake-db/e-commerce';
@@ -29,6 +30,10 @@ export class FakeDbService implements InMemoryDbService
             'project-dashboard-projects' : ProjectDashboardDb.projects,
             'project-dashboard-widgets'  : ProjectDashboardDb.widgets,
             'analytics-dashboard-widgets': AnalyticsDashboardDb.widgets,
+
+            //Dashboards Admin Eleve
+            'project-dashboardAmdinEleve-projects' : ProjectDashboardAdminEleveDb.projects,
+            'project-dashboardAmdinEleve-widgets'  : ProjectDashboardAdminEleveDb.widgets,
 
             // Calendar
             'calendar': CalendarFakeDb.data,

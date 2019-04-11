@@ -52,7 +52,7 @@ export class ProjectDashboardAdminService implements Resolve<any>
     getProjects(): Promise<any>
     {
         return new Promise((resolve, reject) => {
-            this._httpClient.get('api/project-dashboard-projects')
+            this._httpClient.get('api/project-dashboardAmdinEleve-projects')
                 .subscribe((response: any) => {
                     this.projects = response;
                     resolve(response);
@@ -68,7 +68,7 @@ export class ProjectDashboardAdminService implements Resolve<any>
     getWidgets(): Promise<any>
     {
         return new Promise((resolve, reject) => {
-            this._httpClient.get('api/project-dashboard-widgets')
+            this._httpClient.get('api/project-dashboardAmdinEleve-widgets')
                 .subscribe((response: any) => {
                     this.widgets = response;
                     resolve(response);
