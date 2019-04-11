@@ -14,27 +14,6 @@ export const navigation: FuseNavigation[] = [
                 icon     : 'dashboard',
                 url      : '/dashboard',
             },
-            {
-                id       : 'dashboardAdmin',
-                title    : 'Dashboard Eleve',
-                type     : 'item',
-                icon     : 'dashboard',
-                url      : '/dashboards-eleves',
-            },
-            {
-                id       : 'dashboardSalle',
-                title    : 'Dashboard Salle',
-                type     : 'item',
-                icon     : 'dashboard',
-                url      : '/dashboards-salles',
-            },
-            {
-                id       : 'dashboardNoteAbs',
-                title    : 'Dashboard note et absence',
-                type     : 'item',
-                icon     : 'dashboard',
-                url      : '/dashboards-noteabs',
-            }
         ]
     },
     {
@@ -85,6 +64,38 @@ export const navigation: FuseNavigation[] = [
                 type     : 'item',
                 icon     : 'help',
                 url      : '/reglement',
+            }
+        ],
+        
+        
+    },
+
+    {
+        id       : 'school',
+        title    : 'Administration',
+        type     : 'group',
+        icon: 'school',
+        children : [
+            {
+                id       : 'dashboardAdmin',
+                title    : 'Dashboard Eleve',
+                type     : 'item',
+                icon     : 'dashboard',
+                url      : '/dashboards-eleves',
+            },
+            {
+                id       : 'dashboardSalle',
+                title    : 'Dashboard Salle',
+                type     : 'item',
+                icon     : 'dashboard',
+                url      : '/dashboards-salles',
+            },
+            {
+                id       : 'dashboardNoteAbs',
+                title    : 'Dashboard note et absence',
+                type     : 'item',
+                icon     : 'dashboard',
+                url      : '/dashboards-noteabs',
             }
         ],
         
