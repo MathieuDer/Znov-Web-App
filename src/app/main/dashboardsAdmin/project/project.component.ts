@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DataSource } from '@angular/cdk/collections';
 import { BehaviorSubject, Observable } from 'rxjs';
 import * as shape from 'd3-shape';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { fuseAnimations } from '@fuse/animations';
 
@@ -19,6 +20,8 @@ export class ProjectDashboardAdminComponent implements OnInit
 {
     projects: any[];
     selectedProject: any;
+    form: FormGroup;
+
 
     widgets: any;
     widget5: any = {};
@@ -38,7 +41,8 @@ export class ProjectDashboardAdminComponent implements OnInit
      */
     constructor(
         private _fuseSidebarService: FuseSidebarService,
-        private _projectDashboardAdminService: ProjectDashboardAdminService
+        private _projectDashboardAdminService: ProjectDashboardAdminService,
+        private _formBuilder: FormBuilder,
     )
     {
         /**
@@ -140,6 +144,18 @@ export class ProjectDashboardAdminComponent implements OnInit
         this.widget11.onContactsChanged = new BehaviorSubject({});
         this.widget11.onContactsChanged.next(this.widgets.widget11.table.rows);
         this.widget11.dataSource = new FilesDataSource(this.widget11);
+
+        this.form = this._formBuilder.group({
+            firstName: ['', [Validators.required]],
+            lastName: ['', Validators.required],
+            birthdate: ['', Validators.required],
+            birthplace: ['', Validators.required],
+            address: ['', Validators.required],
+            postalCode: ['', Validators.required],
+            city: ['', Validators.required],
+            classes: ['', Validators.required],
+            ecole: ['', Validators.required],
+        });
     }
 
     // -----------------------------------------------------------------------------------------------------
