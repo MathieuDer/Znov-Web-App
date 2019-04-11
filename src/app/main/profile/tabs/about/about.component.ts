@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../../../user.service';
+import { Router } from '@angular/router';
 
 
 import { fuseAnimations } from '@fuse/animations';
@@ -18,6 +20,8 @@ export class ProfileAboutComponent implements OnInit, OnDestroy
 {
     about: any;
     form: FormGroup;
+    user: Object;
+
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -30,6 +34,8 @@ export class ProfileAboutComponent implements OnInit, OnDestroy
     constructor(
         private _profileService: ProfileService,
         private _formBuilder: FormBuilder,
+        private userService: UserService,
+         private router: Router
     )
     {
         // Set the private defaults
@@ -57,9 +63,16 @@ export class ProfileAboutComponent implements OnInit, OnDestroy
                 birthdate: ['', Validators.required],
                 birthplace: ['', Validators.required],
                 address: ['', Validators.required],
-                postalCode: ['', Validators.required],
-                city: ['', Validators.required],
             });
+
+            this.userService.getProfile().subscribe(profile => {
+                this.user = (<any>profile).user;
+              },
+                err => {
+                  console.log(err);
+                  return false;
+                }
+              );
     }
 
     /**

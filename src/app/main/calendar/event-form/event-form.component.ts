@@ -44,7 +44,7 @@ export class CalendarEventFormDialogComponent
         }
         else
         {
-            this.dialogTitle = 'New Event';
+            this.dialogTitle = 'Nouvel événement';
             this.event = new CalendarEventModel({
                 start: _data.date,
                 end  : _data.date

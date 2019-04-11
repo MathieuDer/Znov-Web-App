@@ -60,6 +60,7 @@ export class CalendarService implements Resolve<any>
                 .subscribe((response: any) => {
                     this.events = response.data;
                     this.onEventsUpdated.next(this.events);
+                    console.log(this.events);
                     resolve(this.events);
                 }, reject);
         });

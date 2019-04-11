@@ -6,8 +6,15 @@ import * as _ from 'lodash';
 
 import { FuseConfigService } from '@fuse/services/config.service';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
+import { UserService } from '../../../main/user.service';
+import { AuthService } from '../../../main/authentication/auth.service';
+
 
 import { navigation } from 'app/navigation/navigation';
+import { Router } from '@angular/router';
+
+import { MatSnackBar } from '@angular/material';
+
 
 @Component({
     selector     : 'toolbar',
@@ -25,6 +32,10 @@ export class ToolbarComponent implements OnInit, OnDestroy
     navigation: any;
     selectedLanguage: any;
     userStatusOptions: any[];
+    user: Object = {
+        prenom: 'Robert',
+        nom: 'Delanoe'
+    };
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -39,7 +50,12 @@ export class ToolbarComponent implements OnInit, OnDestroy
     constructor(
         private _fuseConfigService: FuseConfigService,
         private _fuseSidebarService: FuseSidebarService,
-        private _translateService: TranslateService
+        private _translateService: TranslateService,
+        private userService: UserService,
+        private router: Router,
+        private snackBar: MatSnackBar,
+        private authService: AuthService
+
     )
     {
         // Set the defaults
@@ -110,7 +126,19 @@ export class ToolbarComponent implements OnInit, OnDestroy
 
         // Set the selected language from default languages
         this.selectedLanguage = _.find(this.languages, {'id': this._translateService.currentLang});
+
+        {
+            this.userService.getProfile().subscribe(profile => {
+              this.user = (<any>profile).user;
+            },
+              err => {
+                console.log(err);
+                return false;
+              }
+            );
+          }
     }
+
 
     /**
      * On destroy
@@ -121,6 +149,16 @@ export class ToolbarComponent implements OnInit, OnDestroy
         this._unsubscribeAll.next();
         this._unsubscribeAll.complete();
     }
+
+    // tslint:disable-next-line:typedef
+    onLogoutClick() {
+        this.authService.logout();
+        this.snackBar.open('Vous n\'êtes plus connectés', 'Fermer', {
+          duration: 3500,
+        });
+        this.router.navigate(['/auth/login']);
+        return false;
+      }
 
     // -----------------------------------------------------------------------------------------------------
     // @ Public methods

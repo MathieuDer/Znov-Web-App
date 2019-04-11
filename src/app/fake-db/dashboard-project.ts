@@ -25,7 +25,7 @@ export class ProjectDashboardDb
             },
          
         'widget2'      : {
-            'title' : "Absences",
+            'title' : 'Absences',
             'data'  : {
                 'count': 4,
             },
@@ -1733,13 +1733,13 @@ export class ProjectDashboardDb
                         'title': 'Total heures'
                     },
                     {
-                        'title': "Heures justifiées"
+                        'title': 'Heures justifiées'
                     },
                     {
                         'title': 'Injustifiés'
                     },
                     {
-                        'title': "Total"
+                        'title': 'Total'
                     }
                 ],
                 'rows'   : [

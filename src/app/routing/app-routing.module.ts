@@ -24,12 +24,12 @@ import { AuthGuard } from '../main/authentication/auth.guards';
 const routes: Routes = [
   {
     path: '', redirectTo: 'dashboard', pathMatch: 'full',
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'dashboard',
     component: ProjectDashboardComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     resolve: {
       data: ProjectDashboardService
     }
@@ -37,7 +37,7 @@ const routes: Routes = [
   {
     path: 'dashboardsAdmin',
     component: ProjectDashboardAdminComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     resolve: {
       data: ProjectDashboardAdminService
     }
@@ -45,7 +45,7 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     resolve: {
       profile: ProfileService
     }
@@ -53,7 +53,7 @@ const routes: Routes = [
   {
     path: 'reglement',
     component: FaqComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     resolve: {
       faq: FaqService
     }
@@ -61,7 +61,7 @@ const routes: Routes = [
   {
     path: 'calendar',
     component: CalendarComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     children: [],
     resolve: {
       chat: CalendarService
@@ -70,7 +70,7 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactsComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     resolve: {
       contacts: ContactsService
     }
@@ -78,7 +78,7 @@ const routes: Routes = [
   {
     path: 'external',
     component: AcademyCoursesComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     resolve: {
       academy: AcademyCoursesService
     }
