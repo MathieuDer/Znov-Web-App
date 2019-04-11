@@ -146,15 +146,9 @@ export class ProjectDashboardAdminSalleComponent implements OnInit
         this.widget11.dataSource = new FilesDataSource(this.widget11);
 
         this.form = this._formBuilder.group({
-            firstName: ['', [Validators.required]],
-            lastName: ['', Validators.required],
-            birthdate: ['', Validators.required],
-            birthplace: ['', Validators.required],
             address: ['', Validators.required],
-            postalCode: ['', Validators.required],
-            city: ['', Validators.required],
             classes: ['', Validators.required],
-            ecole: ['', Validators.required],
+            salles: ['', Validators.required],
         });
     }
 

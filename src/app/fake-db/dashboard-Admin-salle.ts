@@ -1563,23 +1563,17 @@ export class ProjectDashboardAdminSalleDb
             }
         },
         'widget10'     : {
-            'title': 'Liste des élèves',
+            'title': 'Détails',
             'table': {
                 'columns': [
                     {
-                        'title': 'Nom élèves '
+                        'title': 'Numéro salle '
                     },
                     {
-                        'title': 'Prémon '
+                        'title': 'Clasee '
                     },
                     {
-                        'title': 'Classe'
-                    },
-                    {
-                        'title': 'Ecole'
-                    },
-                    {
-                        'title': 'Email'
+                        'title': 'Cours'
                     },
                     {
                         'title': 'Modifier'
@@ -1591,139 +1585,56 @@ export class ProjectDashboardAdminSalleDb
                 'rows'   : [
                     [
                         {
-                            'value'  : 'Dzemovski',
+                            'value'  : '412',
                             'classes': 'text-bold',
                             'icon'   : ''
                         },
                         {
-                            'value'  : 'Edwin',
+                            'value'  : '3A',
                             'classes': '',
                             'icon'   : ''
                         },
                         {
-                            'value'  : '3A',
+                            'value'  : 'Coordination Front back',
                             'classes': 'text-success',
                             'icon'   : ''
-                        },
-                        {
-                            'value'  : 'Ingésup',
-                            'classes': '',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : 'edwin.dzemovski@znov.com',
-                            'classes': '',
-                            'icon'   : ''
-                        },
+                        },         
                     ],
                     [
                         {
-                            'value'  : 'Derouiche',
+                            'value'  : '422',
                             'classes': 'text-bold',
                             'icon'   : ''
                         },
                         {
-                            'value'  : 'Mathieu',
+                            'value'  : '4B',
                             'classes': '',
                             'icon'   : ''
                         },
                         {
-                            'value'  : '3A',
+                            'value'  : 'Big Data',
                             'classes': 'text-success',
                             'icon'   : ''
-                        },
-                        {
-                            'value'  : 'Ingésup',
-                            'classes': '',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : 'mathieu.derouiche@znov.com',
-                            'classes': '',
-                            'icon'   : ''
-                        },
+                        },         
                     ],
                     [
                         {
-                            'value'  : 'Ouallet',
+                            'value'  : '401',
                             'classes': 'text-bold',
                             'icon'   : ''
                         },
                         {
-                            'value'  : 'Sébastien',
+                            'value'  : '3B',
                             'classes': '',
                             'icon'   : ''
                         },
                         {
-                            'value'  : '3A',
+                            'value'  : 'RGPD',
                             'classes': 'text-success',
                             'icon'   : ''
-                        },
-                        {
-                            'value'  : 'Ingésup',
-                            'classes': '',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : 'sebastien.ouallet@znov.com',
-                            'classes': '',
-                            'icon'   : ''
-                        },
+                        },         
                     ],
-                    [
-                        {
-                            'value'  : 'Ferreira',
-                            'classes': 'text-bold',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : 'Adrien',
-                            'classes': '',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : '3A',
-                            'classes': 'text-success',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : 'Ingésup',
-                            'classes': '',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : 'adrien.ferreira@znov.com',
-                            'classes': '',
-                            'icon'   : ''
-                        },
-                    ],
-                    [
-                        {
-                            'value'  : 'Misfud',
-                            'classes': 'text-bold',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : 'Julien',
-                            'classes': '',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : '3A',
-                            'classes': 'text-success',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : 'Ingésup',
-                            'classes': '',
-                            'icon'   : ''
-                        },
-                        {
-                            'value'  : 'julien.mifsud@znov.com',
-                            'classes': '',
-                            'icon'   : ''
-                        },
-                    ],
+                   
                 ]
             }
         },
