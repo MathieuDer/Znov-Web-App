@@ -46,7 +46,7 @@ export class ProjectDashboardDb
         },
 
         'widget5'      : {
-            'title'     : 'Github Issues',
+            'title'     : 'Courbes des notes',
             'ranges'    : {
                 'TW': 'This Week',
                 'LW': 'Last Week',
@@ -335,11 +335,11 @@ export class ProjectDashboardDb
             },
             'supporting': {
                 'created'  : {
-                    'label': 'CREATED',
+                    'label': 'Swift',
                     'count': {
                         '2W': 48,
                         'LW': 46,
-                        'TW': 54
+                        'TW': 18
                     },
                     'chart': {
                         '2W': [
@@ -414,7 +414,7 @@ export class ProjectDashboardDb
                         ],
                         'TW': [
                             {
-                                'name'  : 'Created',
+                                'name'  : 'Management',
                                 'series': [
                                     {
                                         'name' : 'Mon',
@@ -450,11 +450,11 @@ export class ProjectDashboardDb
                     }
                 },
                 'closed'   : {
-                    'label': 'CLOSED',
+                    'label': 'UI UX',
                     'count': {
                         '2W': 27,
                         'LW': 31,
-                        'TW': 26
+                        'TW': 12
                     },
                     'chart': {
                         '2W': [
@@ -565,11 +565,11 @@ export class ProjectDashboardDb
                     }
                 },
                 'reOpened' : {
-                    'label': 'RE-OPENED',
+                    'label': 'Mangement',
                     'count': {
                         '2W': 4,
                         'LW': 5,
-                        'TW': 2
+                        'TW': 14
                     },
                     'chart': {
                         '2W': [
@@ -680,11 +680,11 @@ export class ProjectDashboardDb
                     }
                 },
                 'wontFix'  : {
-                    'label': 'WON\'T FIX',
+                    'label': 'Big-Data',
                     'count': {
                         '2W': 6,
                         'LW': 3,
-                        'TW': 4
+                        'TW': 9
                     },
                     'chart': {
                         '2W': [
@@ -795,11 +795,11 @@ export class ProjectDashboardDb
                     }
                 },
                 'needsTest': {
-                    'label': 'NEEDS TEST',
+                    'label': 'PHP',
                     'count': {
                         '2W': 10,
                         'LW': 7,
-                        'TW': 8
+                        'TW': 15
                     },
                     'chart': {
                         '2W': [
@@ -910,11 +910,11 @@ export class ProjectDashboardDb
                     }
                 },
                 'fixed'    : {
-                    'label': 'FIXED',
+                    'label': 'Full-Stack',
                     'count': {
                         '2W': 21,
                         'LW': 17,
-                        'TW': 14
+                        'TW': 13
                     },
                     'chart': {
                         '2W': [

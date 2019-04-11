@@ -89,13 +89,6 @@ export const navigation: FuseNavigation[] = [
                 type     : 'item',
                 icon     : 'dashboard',
                 url      : '/dashboards-salles',
-            },
-            {
-                id       : 'dashboardNoteAbs',
-                title    : 'Dashboard note et absence',
-                type     : 'item',
-                icon     : 'dashboard',
-                url      : '/dashboards-noteabs',
             }
         ],
         
